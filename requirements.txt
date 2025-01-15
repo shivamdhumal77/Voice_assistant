@@ -87,5 +87,7 @@ torchaudio
 tqdm==4.66.2
 transformers
 urllib3
+fastapi
+uvicorn
 virtualenv
 yarl
