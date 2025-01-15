@@ -20,21 +20,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libasound2-dev \
     ffmpeg && \
     python-pyaudio \
-    python3-pyaudio \
     rm -rf /var/lib/apt/lists/*
 
-
-# Copy the requirements file into the container
+# Install additional Python dependencies
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-
-# Install additional Python dependencies (optional)
-RUN pip install --no-cache-dir phonemizer torch transformers scipy munch
-
-# Clone Kokoro dependencies (if applicable)
+# Clone the Kokoro dependencies (if applicable)
 RUN git lfs install && \
-    git clone https://huggingface.co/hexgrad/Kokoro-82M && \
-    cd Kokoro-82M && pip install -q phonemizer torch transformers scipy munch
+    git clone https://huggingface.co/hexgrad/Kokoro-82M /app/Kokoro-82M && \
+    cd /app/Kokoro-82M && \
+    pip install -q phonemizer torch transformers scipy munch
 
 # Copy the application code into the container
 COPY app/ ./app
@@ -42,5 +38,5 @@ COPY app/ ./app
 # Expose the port FastAPI will run on
 EXPOSE 8000
 
-
 # Command to start the FastAPI application
+CMD ["uvicorn", "app.main_file:app", "--host", "0.0.0.0", "--port", "8000"]
