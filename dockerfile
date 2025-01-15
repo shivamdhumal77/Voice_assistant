@@ -28,6 +28,8 @@ RUN wget https://files.portaudio.com/archives/pa_stable_v190600_20161030.tgz && 
     ./configure && make && make install && \
     cd .. && rm -rf portaudio*  # Clean up the build files
 
+RUN pip install --no-cache-dir pyaudio --global-option="-I/usr/include"
+
 # Copy the requirements file into the container
 COPY requirements.txt .
 
