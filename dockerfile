@@ -27,8 +27,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy the requirements file into the container
 COPY requirements.txt .
 
-# Install Python dependencies, forcing PyAudio to build from source
-RUN pip install --no-cache-dir --no-binary :all: -r requirements.txt
 
 # Install additional Python dependencies (optional)
 RUN pip install --no-cache-dir phonemizer torch transformers scipy munch
