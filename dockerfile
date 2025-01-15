@@ -4,6 +4,13 @@ FROM python:3.11-slim
 # Set the working directory inside the container
 WORKDIR /app
 
+# Install PortAudio from source
+RUN wget https://files.portaudio.com/archives/pa_stable_v190600_20161030.tgz && \
+    tar -xvzf pa_stable_v190600_20161030.tgz && \
+    cd portaudio && \
+    ./configure && make && make install && \
+    cd .. && rm -rf portaudio*
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
