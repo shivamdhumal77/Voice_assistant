@@ -3,8 +3,6 @@ aiohttp
 aiosignal
 numpy
 langchain_openai
-PyAudio
-pyaudio
 torch
 sounddevice
 langchain
