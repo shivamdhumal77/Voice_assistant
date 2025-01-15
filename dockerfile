@@ -9,18 +9,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     build-essential \
     python3-dev \
-    python-pyaudio \
     libportaudio-dev \
     espeak-ng \
     wget \
     cmake \
+    portaudio19-dev \
     pkg-config \
     libportaudio2 \
     libportaudiocpp0 \
     python3-pyaudio \
     libasound2-dev \
-    portaudio19-dev \
     ffmpeg && \
+    python-pyaudio \
     rm -rf /var/lib/apt/lists/*
 
 
