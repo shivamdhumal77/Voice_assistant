@@ -17,10 +17,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pkg-config \
     libportaudio2 \
     libportaudiocpp0 \
-    python3-pyaudio \
     libasound2-dev \
     ffmpeg && \
     python-pyaudio \
+    python3-pyaudio \
     rm -rf /var/lib/apt/lists/*
 
 
