@@ -92,4 +92,3 @@ uvicorn
 virtualenv
 yarl
 kokoro
-install git+https://huggingface.co/hexgrad/Kokoro-82M.git
