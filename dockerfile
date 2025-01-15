@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     portaudio19-dev \
     build-essential \
+    python3-pyaudio \
     espeak-ng && \
     rm -rf /var/lib/apt/lists/*
 
