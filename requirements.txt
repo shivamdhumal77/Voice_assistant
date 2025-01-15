@@ -91,3 +91,5 @@ fastapi
 uvicorn
 virtualenv
 yarl
+kokoro
+git+https://huggingface.co/hexgrad/Kokoro-82M.git
