@@ -23,14 +23,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg && \
     rm -rf /var/lib/apt/lists/*
 
-# Install PortAudio from source
-RUN wget https://files.portaudio.com/archives/pa_stable_v190600_20161030.tgz && \
-    tar -xvzf pa_stable_v190600_20161030.tgz && \
-    cd portaudio && \
-    ./configure && make && make install && \
-    cd .. && rm -rf portaudio*  # Clean up the build files
-
-RUN pip install --no-cache-dir pyaudio --global-option="-I/usr/include"
 
 # Copy the requirements file into the container
 COPY requirements.txt .
