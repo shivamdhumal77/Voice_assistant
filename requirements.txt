@@ -61,7 +61,6 @@ packaging
 platformdirs==4.2.0
 pre-commit==3.6.2
 pyaml
-pyAudio
 pycparser==2.21
 pydantic==2.6.4
 pydantic_core==2.16.3
