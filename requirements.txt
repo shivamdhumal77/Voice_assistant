@@ -4,6 +4,7 @@ aiosignal
 numpy
 langchain_openai
 PyAudio==0.2.11
+pyaudio
 torch
 sounddevice
 langchain
