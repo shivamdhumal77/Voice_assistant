@@ -42,4 +42,5 @@ COPY app/ ./app
 # Expose the port FastAPI will run on
 EXPOSE 8000
 
+
 # Command to start the FastAPI application
