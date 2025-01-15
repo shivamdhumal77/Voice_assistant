@@ -4,6 +4,10 @@ FROM python:3.11-slim
 # Set the working directory inside the container
 WORKDIR /app
 
+
+RUN pip install --no-cache-dir --no-binary :all: pyaudio
+
+
 # Install PortAudio from source
 RUN wget https://files.portaudio.com/archives/pa_stable_v190600_20161030.tgz && \
     tar -xvzf pa_stable_v190600_20161030.tgz && \
